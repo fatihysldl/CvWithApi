@@ -1,0 +1,26 @@
+﻿@model DtoLayer.Dtos.projectDto.projectAddDto
+@{
+    ViewData["Title"] = "addProject";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h1>Add Project</h1>
+
+@using (Html.BeginForm("addProject", "adminProject", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Project Title</label>
+        @Html.TextBoxFor(i=>i.projectsTitle, new {@class="form-control"})
+        <br>
+        <label>Description of Project</label>
+        @Html.TextBoxFor(i=>i.projectsDescription, new {@class="form-control"})
+        <br>
+        <label>Image Path of Project</label>
+        @Html.TextBoxFor(i=>i.projectsImage, new {@class="form-control"})
+        <br>
+        @Html.HiddenFor(i=>i.projectsId)
+        <button class=" btn btn-success">Add Project</button>
+    </div>
+
+}
+

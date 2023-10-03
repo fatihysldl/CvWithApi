@@ -1,0 +1,32 @@
+﻿@model DtoLayer.Dtos.contactDto.contactUpdateDto
+@{
+    ViewData["Title"] = "updateContact";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h1>Update Contact</h1>
+
+
+@using (Html.BeginForm("updateContact", "adminContact", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Contact Name</label>
+        @Html.TextBoxFor(i=>i.name, new {@class="form-control"})
+        <br>
+        <label>Contact Surname</label>
+        @Html.TextBoxFor(i=>i.surname, new {@class="form-control"})
+        <br>
+        <label>Contact E-Mail</label>
+        @Html.TextBoxFor(i=>i.mail, new {@class="form-control"})
+        <br>
+        <label>Contact Phone Number</label>
+        @Html.TextBoxFor(i=>i.phoneNumber, new {@class="form-control"})
+        <br>
+        <label>Contact Adress</label>
+        @Html.TextBoxFor(i=>i.adress, new {@class="form-control"})
+        <br>
+        @Html.HiddenFor(i=>i.contactId)
+        <button class=" btn btn-success">Update Contact</button>
+    </div>
+
+}

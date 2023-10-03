@@ -1,0 +1,36 @@
+﻿@using DtoLayer.Dtos.experienceDto
+@model List<experienceListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h1>List Of Experiences</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>experience Id</th>
+        <th>experience dates</th>
+        <th>experience Position</th>
+        <th>experience Adress</th>
+        <th>experience Description</th>
+        <th>Edit experience</th>
+        <th>delete experience</th>
+    </tr>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.experienceId</td>
+                <td>@i.experienceDates</td>
+                <td>@i.experiencePosition</td>
+                <td>@i.experienceAdress</td>
+                <td>@i.experienceDescription</td>
+                <td><a href="~/adminExperience/updateExperience/@i.experienceId" class="btn btn-success">Edit</a></td>
+                <td><a href="~/adminExperience/deleteExperience/@i.experienceId" class="btn btn-outline-warning">Delete</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="~/adminExperience/addExperience" class="btn btn-primary">Add experience</a>

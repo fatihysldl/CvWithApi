@@ -1,0 +1,28 @@
+﻿@model DtoLayer.Dtos.educationDto.educationUpdateDto
+@{
+    ViewData["Title"] = "updateEducation";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h1>Update Education</h1>
+
+@using (Html.BeginForm("updateEducation", "adminEducation", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>School</label>
+        @Html.TextBoxFor(i=>i.educationSchool, new {@class="form-control"})
+        <br>
+        <label>Adress of School</label>
+        @Html.TextBoxFor(i=>i.educationAdress, new {@class="form-control"})
+        <br>
+        <label>Department of Education</label>
+        @Html.TextBoxFor(i=>i.educationDepartment, new {@class="form-control"})
+        <br>
+        <label>Description of Education</label>
+        @Html.TextBoxFor(i=>i.educationDescription, new {@class="form-control"})
+        <br>
+        @Html.HiddenFor(i=>i.educationId)
+        <button class=" btn btn-success">Update</button>
+    </div>
+
+}

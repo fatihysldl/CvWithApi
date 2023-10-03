@@ -1,0 +1,28 @@
+﻿@model DtoLayer.Dtos.experienceDto.experienceAddDto
+@{
+    ViewData["Title"] = "addExperience";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h1>Add Experience</h1>
+
+@using (Html.BeginForm("addExperience", "adminExperience", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>experience Dates</label>
+        @Html.TextBoxFor(i=>i.experienceDates, new {@class="form-control"})
+        <br>
+        <label>Position of Experience</label>
+        @Html.TextBoxFor(i=>i.experiencePosition, new {@class="form-control"})
+        <br>
+        <label>Adress of Experience</label>
+        @Html.TextBoxFor(i=>i.experienceAdress, new {@class="form-control"})
+        <br>
+        <label>Description of Experience</label>
+        @Html.TextBoxFor(i=>i.experienceDescription, new {@class="form-control"})
+        <br>
+        @Html.HiddenFor(i=>i.experienceId)
+        <button class=" btn btn-success">Add Experience</button>
+    </div>
+
+}

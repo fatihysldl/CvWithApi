@@ -1,0 +1,169 @@
+﻿/*Go To add Pages buttons */
+.goSavePageButton {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.7em 2em;
+    border: 3px solid #FF0072;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: #FF0072;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+    .goSavePageButton:before {
+        transition: 0.5s all ease;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        opacity: 0;
+        content: '';
+        background-color: #FF0072;
+        z-index: -1;
+    }
+
+    .goSavePageButton:hover, .goSavePageButton:focus {
+        color: white;
+    }
+
+        .goSavePageButton:hover:before, .goSavePageButton:focus:before {
+            transition: 0.5s all ease;
+            left: 0;
+            right: 0;
+            opacity: 1;
+        }
+
+    .goSavePageButton:active {
+        transform: scale(0.9);
+    }
+
+/*delete .goSavePageButtons */
+
+.noselect {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+    text-decoration: none;
+}
+
+    .noselect, .noselect span {
+        transition: 200ms;
+    }
+
+        .noselect .text {
+            transform: translateX(35px);
+            color: white;
+            font-weight: bold;
+        }
+
+        .noselect .icon {
+            position: absolute;
+            border-left: 1px solid #c41b1b;
+            transform: translateX(110px);
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .noselect svg {
+            width: 15px;
+            fill: #eee;
+        }
+
+        .noselect:hover {
+            background: #ff3636;
+            text-decoration: none;
+        }
+
+            .noselect:hover .text {
+                color: transparent;
+            }
+
+            .noselect:hover .icon {
+                width: 150px;
+                border-left: none;
+                transform: translateX(0);
+            }
+
+        .noselect:focus {
+            outline: none;
+        }
+
+        .noselect:active .icon svg {
+            transform: scale(0.8);
+        }
+
+        /*Save buttons*/
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+}
+
+    .cta:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        border-radius: 50px;
+        background: #b1dae7;
+        width: 45px;
+        height: 45px;
+        transition: all 0.3s ease;
+    }
+
+    .cta span {
+        position: relative;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #234567;
+    }
+
+    .cta svg {
+        position: relative;
+        top: 0;
+        margin-left: 10px;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #234567;
+        stroke-width: 2;
+        transform: translateX(-5px);
+        transition: all 0.3s ease;
+    }
+
+    .cta:hover:before {
+        width: 100%;
+        background: #b1dae7;
+    }
+
+    .cta:hover svg {
+        transform: translateX(0);
+    }
+
+    .cta:active {
+        transform: scale(0.95);
+    }

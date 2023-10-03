@@ -1,0 +1,35 @@
+﻿@model List<educationListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h1>Education</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>education Id</th>
+        <th>education School</th>
+        <th>education Adress</th>
+        <th>education Department</th>
+        <th>education Description</th>
+        <th>Edit Education</th>
+        <th>delete Education</th>
+    </tr>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.educationId</td>
+                <td>@i.educationSchool</td>
+                <td>@i.educationAdress</td>
+                <td>@i.educationDepartment</td>
+                <td>@i.educationDescription</td>
+                <td><a href="~/adminEducation/updateEducation/@i.educationId" class="btn btn-success">Edit</a></td>
+                <td><a href="~/adminEducation/deleteEducation/@i.educationId" class="btn btn-outline-warning">Delete</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="~/adminEducation/addToEducation" class="btn btn-primary">Add Education</a>

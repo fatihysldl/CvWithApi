@@ -1,0 +1,38 @@
+﻿@using DtoLayer.Dtos.contactDto
+@model List<contactListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="py-5">
+    <div class="container px-5 mb-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Contact Informations</span></h1>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-11 col-xl-9 col-xxl-8">
+
+                @foreach (var i in Model)
+                {
+                    <div class="card overflow-hidden shadow rounded-4 border-0 mt-2">
+                        <div class="card-body p-0">
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid" src="https://dummyimage.com/300x400/343a40/6c757d" alt="..." />
+                                <div class="p-5">
+                                    <h2 class="fw-bolder">İletişim Bilgileri</h2>
+                                    <p>Name and Surname: @i.name @i.surname</p>
+                                    <p>E-Mail: @i.mail</p>
+                                    <p>Phone:@i.phoneNumber </p>
+                                    <p>Adres: @i.adress</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>

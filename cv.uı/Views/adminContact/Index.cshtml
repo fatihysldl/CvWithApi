@@ -1,0 +1,35 @@
+﻿@model List<contactListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h1>Contact</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>contact Id</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Mail</th>
+        <th>Phone Number</th>
+        <th>Adress</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.contactId</td>
+                <td>@i.name</td>
+                <td>@i.surname</td>
+                <td>@i.mail</td>
+                <td>@i.phoneNumber</td>
+                <td>@i.adress</td>
+                <td><a class="btn btn-primary" href="~/adminContact/updateContact/@i.contactId">Update</a></td>
+                <td><a class="btn btn-warning" href="~/adminContact/deleteContact/@i.contactId">Delete</a></td>    
+            </tr>
+        }
+    </tbody>
+</table>

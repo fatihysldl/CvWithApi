@@ -1,0 +1,28 @@
+﻿@model DtoLayer.Dtos.aboutDto.aboutAddDto
+@{
+    ViewData["Title"] = "addAbout";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h1>Add About</h1>
+
+@using (Html.BeginForm("addAbout", "adminAbout", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>About Header</label>
+        @Html.TextBoxFor(i=>i.aboutHeader, new {@class="form-control"})
+        <br>
+        <label>About Subtitle</label>
+        @Html.TextBoxFor(i=>i.aboutSubTitle, new {@class="form-control"})
+        <br>
+        <label>What About You ?</label>
+        @Html.TextBoxFor(i=>i.aboutDescription, new {@class="form-control"})
+        <br>
+        <label>Social Media Link</label>
+        @Html.TextBoxFor(i=>i.aboutSocialMedia, new {@class="form-control"})
+        <br>
+        @Html.HiddenFor(i=>i.aboutId)
+        <button class=" btn btn-success">Add About</button>
+    </div>
+
+}

@@ -1,0 +1,34 @@
+﻿@model List<aboutListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h1>About</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>about Id</th>
+        <th>about Header</th>
+        <th>about subtitle</th>
+        <th>about description</th>
+        <th>about social Medya</th>
+        <th>Edit About</th>
+    </tr>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.aboutId</td>
+                <td>@i.aboutHeader</td>
+                <td>@i.aboutSubTitle</td>
+                <td>@i.aboutDescription</td>
+                <td>@i.aboutSocialMedia</td>
+                <td><a href="~/adminAbout/updateAbout/@i.aboutId" class="btn btn-success">Edit</a></td>
+                <td><a href="~/adminAbout/deleteAbout/@i.aboutId" class="btn btn-outline-warning">Delete</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="~/HomePage/addAbout" class="btn btn-primary">Add About</a>

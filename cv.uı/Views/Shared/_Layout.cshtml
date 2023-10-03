@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+@await Html.PartialAsync("~/Areas/User/Views/Default/head.cshtml")
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        @await Html.PartialAsync("~/Areas/User/Views/Default/nav.cshtml")
+        <!-- Header-->
+       
+        <!-- About Section-->
+        @RenderBody()
+    </main>
+    <!-- Footer-->
+    @*@await Html.PartialAsync("~/Areas/User/Views/Default/footer.cshtml")*@
+    @RenderBody()
+    @await Html.PartialAsync("~/Areas/User/Views/Default/scripts.cshtml")
+</body>
+</html>
+

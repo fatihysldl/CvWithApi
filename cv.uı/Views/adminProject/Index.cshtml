@@ -1,0 +1,33 @@
+﻿@model List<projectListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h1>Project List</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Project Id</th>
+        <th>Project Title</th>
+        <th>Project Description</th>
+        <th>Project Image</th>
+        <th>Edit Project</th>
+        <th>delete Project</th>
+    </tr>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.projectsId</td>
+                <td>@i.projectsTitle</td>
+                <td>@i.projectsDescription</td>
+                <td>@i.projectsImage</td>
+                <td><a href="~/adminProject/updateProject/@i.projectsId" class="btn btn-success">Edit</a></td>
+                <td><a href="~/adminProject/deleteProject/@i.projectsId" class="btn btn-outline-warning">Delete</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="~/adminProject/addProject" class="btn btn-primary">Add Project</a>
