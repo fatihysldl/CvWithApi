@@ -13,7 +13,7 @@ The layers I use in the API:
 4) Entity Layer
 5) Dto Layer
 
-Validation, Areas, Partial Views were also used in this project. It is a project built in line with solid principles.
+Validation, Areas, Partial Views, Auto Mapping were also used in this project. It is a project built in line with solid principles.
 
 APIs I created:
 
